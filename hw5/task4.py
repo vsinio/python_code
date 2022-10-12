@@ -1,6 +1,4 @@
-mess = "AAAAAAAAAAAAAABBBBBCDDDDDEEEEEF"
-
-
+MESSAGE = "AAAAAAAAAAAAAABBBBBCDDDDDEEEEEF"
 def RLE(somestr):  # Функция RLE RESULLT: 5A5B1C5D5E
     final = ""
     counter = 1
@@ -19,13 +17,13 @@ def RLE(somestr):  # Функция RLE RESULLT: 5A5B1C5D5E
             return final
 
 
-print(RLE(mess))
+print(RLE(MESSAGE))
 
 # j+=1
 # if j+1 == len(somestr):
 # final+=str(counter)+somestr[j]
 
-mess_res = "14A5B1C5D5E1F"
+MESS_RES = "14A5B1C5D5E1F"
 
 
 def res_RLE(somestr):  # decoder
@@ -42,4 +40,4 @@ def res_RLE(somestr):  # decoder
     return final_str
 
 
-print(res_RLE(mess_res))
+print(res_RLE(MESS_RES))
