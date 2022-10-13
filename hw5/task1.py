@@ -26,5 +26,4 @@ def delete_word(text, del_symb):
     new_lst = ' '.join(lst_1)
     return new_lst
 
-
 print(delete_word(TEXT, DEL_SYMB))
