@@ -38,21 +38,21 @@ def winner(board):
 def cross_zero():
     end = False
     player = 2
-    while end == False:
+    while end is False:
         print_board(board_lst)
         if player % 2 == 0:
             print("Игрок 1, ваш ход!")
-            b = "X"
-            input_symbol(int(input("Введите число на поле: ")), b)
+            player_value = "X"
+            input_symbol(int(input("Введите число на поле: ")), player_value)
         else:
             print("Игрок 2, ваш ход!")
-            b = "O"
-            input_symbol(int(input("Введите число на поле: ")), b)
+            player_value = "O"
+            input_symbol(int(input("Введите число на поле: ")), player_value)
 
         player += 1
         win = winner(board_lst)
         if win == "":
-            end == False
+            end = False
         else:
             print_board(board_lst)
             return f"{win} - Победитель!"

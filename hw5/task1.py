@@ -1,4 +1,4 @@
-# # Напишите программу, удаляющую из текста все слова, содержащие ""абв"".
+# Напишите программу, удаляющую из текста все слова, содержащие ""абв"".
 # # 1 способ
 # #TO DO
 # text_for_def = "Арава арива братец барашка бред брат вот вон вид абва абв"
@@ -13,18 +13,18 @@
 # print(new_text)
 
 
-text = "абвесили меня сегодня абвечером абв ноабве"
-delete = "абв"
+TEXT = "абвесили меня сегодня абвечером абв ноабве"
+DEL_SYMB = "абв"
 
 
-def delete_word(text, delete):
+def delete_word(text, del_symb):
     lst = text.split()
     lst_1 = []
     for i in lst:
-        if delete not in i:
+        if del_symb not in i:
             lst_1.append(i)
     new_lst = ' '.join(lst_1)
     return new_lst
 
 
-print(delete_word(text, delete))
+print(delete_word(TEXT, DEL_SYMB))

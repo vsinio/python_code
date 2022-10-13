@@ -2,43 +2,43 @@ from random import randint
 
 
 def input_dat(name):
-    x = int(input(f"{name}, введите количество конфет, которое возьмете от 1 до 28: "))
-    while x < 1 or x > 28:
-        x = int(input(f"{name}, введите корректное количество конфет: "))
-    return x
+    candy_qty = int(input(f"{name}, введите количество конфет, которое возьмете от 1 до 28: "))
+    while candy_qty < 1 or candy_qty > 28:
+        candy_qty = int(input(f"{name}, введите корректное количество конфет: "))
+    return candy_qty
 
 
-def p_print(name, k, counter, value):
-    print(f"Ходил {name}, он взял {k}, теперь у него {counter}. Осталось на столе {value} конфет.")
+def p_print(name, step, counter, edge_candys):
+    print(f"Ходил {name}, он взял {step}, теперь у него {counter}. Осталось на столе {edge_candys} конфет.")
 
 
-player1 = input("Введите имя первого игрока: ")
-player2 = input("Введите имя второго игрока: ")
-value = 2021
-flag = randint(0, 2)  # определение игрока
-if flag:
-    print(f"Первый ходит {player1}")
+player_first = input("Введите имя первого игрока: ")
+player_second = input("Введите имя второго игрока: ")
+ALL_CAND = 2021
+RAND_POS = randint(0, 2)  # определение игрока
+if RAND_POS:
+    print(f"Первый ходит {player_first}")
 else:
-    print(f"Первый ходит {player2}")
+    print(f"Первый ходит {player_second}")
 
-counter1 = 0
-counter2 = 0
+COUNT_FRST = 0
+COUNT_SEC = 0
 
-while value > 28:
-    if flag:
-        k = input_dat(player1)
-        counter1 += k
-        value -= k
-        flag = False
-        p_print(player1, k, counter1, value)
+while ALL_CAND > 28:
+    if RAND_POS:
+        candy_takes = input_dat(player_first)
+        COUNT_FRST += candy_takes
+        ALL_CAND -= candy_takes
+        RAND_POS = False
+        p_print(player_first, candy_takes, COUNT_FRST, ALL_CAND)
     else:
-        k = input_dat(player2)
-        counter2 += k
-        value -= k
-        flag = True
-        p_print(player2, k, counter2, value)
+        candy_takes = input_dat(player_second)
+        COUNT_SEC += candy_takes
+        ALL_CAND -= candy_takes
+        RAND_POS = True
+        p_print(player_second, candy_takes, COUNT_SEC, ALL_CAND)
 
-if flag:
-    print(f"Выиграл {player1}")
+if RAND_POS:
+    print(f"Выиграл {player_first}")
 else:
-    print(f"Выиграл {player2}")
+    print(f"Выиграл {player_second}")
