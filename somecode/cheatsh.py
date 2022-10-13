@@ -3,7 +3,7 @@
 """
 import time
 
-def check_1(n):
+def check_time(n):
     """
     Фиксируем отсечки времени до и после выполнения основной логики
     :param n:
@@ -17,6 +17,6 @@ def check_1(n):
         res = res + i
 
     end_val = time.time()
-    return res, end_val - start_val
+    return res, round(end_val - start_val, 10)
 
 print(check_1(3))
