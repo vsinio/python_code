@@ -19,9 +19,9 @@ DEL_SYMB = "абв"
 print(TEXT.split())
 
 def delete_word(text, del_symb):
-    lst = text.split()
+    new_lst = text.split()
     lst_1 = []
-    for i in lst:
+    for i in new_lst:
         if del_symb not in i:
             lst_1.append(i)
     new_lst = ' '.join(lst_1)
