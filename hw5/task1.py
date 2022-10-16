@@ -1,24 +1,26 @@
-# Напишите программу, удаляющую из текста все слова, содержащие ""абв"".
-# # 1 способ
-# #TO DO
-# text_for_def = "Арава арива братец барашка бред брат вот вон вид абва абв"
-# symb = ('а','б', 'в')
-# def del_symb(text, what_del):
-#     new_text = ""
-#     for i in text:
-#         if i not in what_del:
-#             new_text+=i
-#     return new_text
-# new_text = del_symb(text_for_def,symb)
-# print(new_text)
+"""Напишите программу, удаляющую из текста все слова, содержащие ""абв"".
+# 1 способ
+#TO DO
+text_for_def = "Арава арива братец барашка бред брат вот вон вид абва абв"
+symb = ('а','б', 'в')
+def del_symb(text, what_del):
+    new_text = ""
+    for i in text:
+        if i not in what_del:
+            new_text+=i
+    return new_text
+new_text = del_symb(text_for_def,symb)
+print(new_text)
 
-#1st VAR
+1st VAR"""
 
 TEXT = "абвесили меня сегодня абвечером абв ноабве"
 DEL_SYMB = "абв"
 print(TEXT.split())
 
 def delete_word(text, del_symb):
+    """функция принимает исходный текст и элемент для удаления, далее создает список
+    в который добавляются элементы не имеющие del_symb - элементов которые удаляются"""
     new_lst = text.split()
     lst_1 = []
     for i in new_lst:
@@ -35,6 +37,7 @@ TEXT_1 = "абвесили меня сегодня абвечером абв н�
 DEL_SYMB_1 = "абв"
 print(TEXT.split())
 
-lst = [el for el in TEXT_1.split() if DEL_SYMB_1 not in el]
-lst = ' '.join(lst)
-print(lst)
+LST = [el for el in TEXT_1.split() if DEL_SYMB_1 not in el]
+LST = ' '.join(LST)
+
+print(LST)

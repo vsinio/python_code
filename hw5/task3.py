@@ -1,7 +1,8 @@
-# Создайте программу для игры в ""Крестики-нолики"".
+"""игра в крестики нолики"""
 board_lst = [0, 1, 2,
              3, 4, 5,
              6, 7, 8]
+"""тут можно задать список с помощью lc но смысла в этом нет"""
 
 win_line = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
             [0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -9,6 +10,7 @@ win_line = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
 
 
 def print_board(boardlst):
+    """печать актуального поля"""
     count = 1
     for i in boardlst:
         if count % 3 != 0:
@@ -19,12 +21,14 @@ def print_board(boardlst):
 
 
 def input_symbol(dig, symb):
+    """найти клетку и задать значение для замены"""
     for i in board_lst:
         if dig == i:
             board_lst[i] = symb
 
 
 def winner(board):
+    """проверка победителя"""
     winers = ""
     for i in win_line:
         if board[i[0]] == "X" and board[i[1]] == "X" and board[i[2]] == "X":
@@ -36,6 +40,7 @@ def winner(board):
 
 
 def cross_zero():
+    """основной алгоритм игры с функциями описанными выше"""
     end = False
     player = 2
     while end is False:

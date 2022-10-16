@@ -2,6 +2,7 @@ from random import randint
 
 
 def input_dat(name):
+    """"функция запрашивает имя игрока, затем дает выбор игроку сколько конфет взять от 1 до 28"""
     candy_qty = int(input(f"{name}, введите количество конфет, которое возьмете от 1 до 28: "))
     while candy_qty < 1 or candy_qty > 28:
         candy_qty = int(input(f"{name}, введите корректное количество конфет: "))
@@ -9,6 +10,7 @@ def input_dat(name):
 
 
 def p_print(name, step, counter, edge_candys):
+    """информацию по ходу, кто ходил, сколько взял, сколько сейчас и сколько осталось"""
     print(f"Ходил {name}, он взял {step}, теперь у него {counter}. Осталось на столе {edge_candys} конфет.")
 
 

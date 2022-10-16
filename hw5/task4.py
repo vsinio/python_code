@@ -1,22 +1,25 @@
+"""алгоритм сжатия и 'разжатия'"""
 MESSAGE = "AAAAAAAAAAAAAABBBBBCDDDDDEEEEEF"
 
+
 def first_rle(string):  # Функция RLE RESULLT: 14A5B1C5D5E1F
+    """функция принимает строку, в процессе проходит каждый элемент сравнивая
+    его с цифрой, если нет, то берет первую букву и умножает на счетчик"""
     final_str = ""
     counter = 1
 
-    for j in range(0, len(string)):
+    for index in range(0, len(string)):
         try:
-            if string[j] == string[j + 1]:
+            if string[index] == string[index + 1]:
                 counter += 1
             else:
-                final_str += str(counter) + string[j]
+                final_str += str(counter) + string[index]
                 counter = 1
 
-            j += 1
+            index += 1
         except IndexError:
-            final_str += str(counter) + string[j]
+            final_str += str(counter) + string[index]
     return final_str
-
 
 
 print(first_rle(MESSAGE))
@@ -24,15 +27,16 @@ print(first_rle(MESSAGE))
 MESS_RES = "14A5B1C5D5E1F"
 
 
-def sec_rle(string):  # decoder
+def sec_rle(string):
+    """Декодер"""
     final_str = ""
     index = 0
     count = ""
-    for i in string:
-        if i.isdigit():
-            count += i
+    for el in string:
+        if el.isdigit():
+            count += el
         else:
-            final_str += int(count) * i
+            final_str += int(count) * el
             count = ""
         index += 1
     return final_str
