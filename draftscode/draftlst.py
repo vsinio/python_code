@@ -1,5 +1,8 @@
+import os  # ОЧИСТИТЬ КОНСОЛЬ
 from random import randint
 
+os.system("cls")
+print()
 def new_random_lst(x):  # ввод количества элементов в списке
     from random import randint
     len_lst = x
@@ -35,8 +38,22 @@ def secfibonacci(n): #фибоначчи второй вариант
     return secfibonacci(n-2) + secfibonacci(n-1)
 
 
-print(fibonacci(10))
+print(fibonacci(5))
 
-import os # ОЧИСТИТЬ КОНСОЛЬ
-os.system('cls') 
 
+print("____")
+
+#удалить повтор элементы
+lst = [1,2,3,4,5,6,1,2,3]
+def sort_rem(lst):
+    uniq_el = set()
+    for el in lst:
+        if el not in uniq_el:
+            uniq_el.add(el)
+        else:
+            uniq_el.discard(el)
+    s = list(uniq_el)
+    s.sort()
+    return s
+print(sort_rem(lst))
+print(list(filter(lambda i: lst.count(i) ==1, lst)))
