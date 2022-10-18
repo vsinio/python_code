@@ -20,4 +20,4 @@ def maximum(a, b):
 
 print("def variant", end=" ")
 print(maximum(5, 9))
-print((lambda a, b: a if a > a else b)(5, 9))
+print((lambda a, b: a if a > b else b)(5, 9))
