@@ -14,6 +14,22 @@ length (длина в метрах), width (ширина в метрах).
 
 
 class Road:
-    def add(self, length, withd):
+    """класс дороги, в атрибутах будут неизменяемые константы"""
+    mass = 25
+    thickness = 0.01
+
+    def __init__(self, withd, length):
+        self._withd = withd
         self._length = length
-        self.withd = withd
+
+    def formula(self, mult_thickness):
+        """20м*5000м*25кг*0.05м = 125000 кг = 125 т
+ длина * ширина * масса асфальта для покрытия одного кв
+метра дороги асфальтом, толщиной в 1 см * число м толщины полотна."""
+        result = self.mass * self._length * self._withd * self.thickness * mult_thickness
+        return str(f"{result}кг = {result / 1000} т")
+
+
+r = Road(20, 5000)
+
+print(r.formula(5))

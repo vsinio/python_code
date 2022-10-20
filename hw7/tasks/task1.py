@@ -12,38 +12,39 @@
 Проверить работу примера, создав экземпляр и вызвав описанный метод.
 """
 from time import sleep
-"""1var"""
 
 
 class TrafficLight:
+    """Это класс содержащий в себе аргументы цветов светофора и функцию вызова его работы"""
     color = ['Красный', 'Желтый', 'Зеленый']
 
     def running(self):
+        """запускает светофор, lst - промежутки delay"""
         lst = [7, 2, 5]
 
         for sec in range(3):
             print(self.color[sec])
             sleep(lst[sec])
 
-print(TrafficLight.__dict__)
+
 t = TrafficLight()
 t.running()
 
-#2 var
-class TrafficLight_1:
-    color = 'red'
-
-    def running(self):
-        print(self.color)
-        sleep(7)
-        self.color = 'yellow'
-        print(self.color)
-        sleep(2)
-        self.color = 'green'
-        sleep(5)
-        print(self.color)
-
-
-print(TrafficLight_1.__dict__)
-t = TrafficLight_1()
-t.running()
+# 2 var
+# class TrafficLight_1:
+#     color = 'red'
+#
+#     def running(self):
+#         print(self.color)
+#         sleep(7)
+#         self.color = 'yellow'
+#         print(self.color)
+#         sleep(2)
+#         self.color = 'green'
+#         sleep(5)
+#         print(self.color)
+#
+#
+# print(TrafficLight_1.__dict__)
+# t = TrafficLight_1()
+# t.running()
