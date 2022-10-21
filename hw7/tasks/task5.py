@@ -32,6 +32,7 @@ class Handle(Stationery):
         """new func for new class"""
         print("Запуск отрисовки маркера? \nДа!")
 
+
 s = Stationery()
 pen = Pen("ручка")
 pencil = Pencil("карандаш")

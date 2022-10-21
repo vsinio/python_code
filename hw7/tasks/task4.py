@@ -28,6 +28,9 @@ class Car:
         self.name = name
         self.is_police = is_police
 
+    def __str__(self):
+        return f"Объект с параметрами: {self.speed} {self.color} {self.name} {self.is_police}"
+
     def go(self):
         """функция - машина поехала + ранд скорость из инита"""
         print(f"Машина поехала вперед со скоростью {self.speed}")
@@ -84,3 +87,8 @@ print(f'SportCar = {sport.__dict__}')
 print(f'WorkCar = {work.__dict__}')
 work.show_speed()
 print(f'PoliceCar = {pol.__dict__}')
+
+print(town)
+print(sport)
+print(work)
+print(pol)
