@@ -47,6 +47,7 @@ class Car:
 
 
 class TownCar(Car):
+    """child class from class Car"""
     def show_speed(self):
         """показ предупреждения авто"""
         if self.speed > 60:
@@ -54,12 +55,13 @@ class TownCar(Car):
             print(f"В данный момент машина движется со скоростью {self.speed}")
 
 class SportCar(Car):
-    pass
+    """child class from class Car"""
 
 
 class WorkCar(Car):
+    """child class from class Car"""
     def show_speed(self):
-        """показ предупреждения авто"""
+        """speed warning"""
         print(f"В данный момент машина движется со скоростью {self.speed}")
         if self.speed > 40:
             print("WARNING!!! Сбросьте скорость")
@@ -68,7 +70,7 @@ class WorkCar(Car):
 
 
 class PoliceCar(Car):
-    pass
+    """child class from class Car"""
 
 
 town = TownCar(randint(1, 100), "Blue", "Mercedes")
