@@ -70,3 +70,39 @@ print(cell2.make_order(10))
 *****\n *****\n *****\n *****\n *****\n *****\n
 **********\n **********\n *****
 """
+
+
+class Cell:
+    """класс клетка"""
+    def __init__(self, qty):
+        self.qty = qty
+
+    def __str__(self):
+        return f"кол-во ячеек в клетке = {self.qty}"
+
+    def __add__(self, other):
+        return Cell(self.qty + other.qty)
+
+    def __sub__(self, other):
+        if self.qty > other.qty:
+            return Cell(self.qty - other.qty)
+        else:
+            print("Упс, ошибочка")
+            return str('нету разности тут')
+
+    def __mul__(self, other):
+        return Cell(self.qty * other.qty)
+
+    def __truediv__(self, other):
+        return Cell(self.qty // other.qty)
+
+
+a = Cell(5)
+b = Cell(2)
+print(a)
+print(b)
+print(f"сумма {a + b}")
+print(f"разность {a - b}")
+print(f"разность {b - a}")
+print(f"умножение {a * b}")
+print(f"деление {a / b}")

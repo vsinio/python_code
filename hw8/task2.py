@@ -17,3 +17,42 @@
 Общий расход ткани = 21.57
 Два класса: абстрактный и Clothes
 """
+
+
+class Clothes:
+    """класс содержащий размеры одежды"""
+    def __init__(self, v, h):
+        """nothing to say, just init"""
+        self.v = v
+        self.h = h
+
+    def consumption_v(self):
+        """расход ткани пальто"""
+        print(f"расход ткани на пальто = {self.v / 6.5 + 0.5}")
+        return self.v / 6.5 + 0.5
+
+    def consumption_h(self):
+        """расход ткани костюм"""
+        print(f"расход ткани на костюм = {2 * self.h + 0.3}")
+        return 2 * self.h + 0.3
+
+    def common_cons(self):
+        """общее кол-во"""
+        return (self.v / 6.5 + 0.5) + (2 * self.h + 0.3)
+
+    def __add__(self, other):
+        return Clothes(self.v + other.v, self.h + other.h)
+
+    def __str__(self):
+        return f"{self.v, self.h}"
+
+
+a = Clothes(5, 7)
+b = Clothes(5, 7)
+a.consumption_h()
+a.consumption_v()
+print(f"общий расход ткани = {a.common_cons()}")
+print(a)
+print(b)
+c = a + b
+print(c)
