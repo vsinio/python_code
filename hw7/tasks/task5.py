@@ -31,7 +31,8 @@ class Handle(Stationery):
     def draw(self):
         """new func for new class"""
         print("Запуск отрисовки маркера? \nДа!")
-
+    def __str__(self):
+        return f'{self.title} хех'
 
 s = Stationery()
 pen = Pen("ручка")
