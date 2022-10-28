@@ -15,5 +15,5 @@ def from10to2 (x):
         cc = x%2
         two_cc+=str(cc)
         x//=2
-    return two_cc
+    return two_cc[::-1]
 print(from10to2(cc))
