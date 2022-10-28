@@ -1,4 +1,5 @@
 import unittest
+#from code_func import *
 from code_func import summ_digits
 from code_func import delete_word
 from code_func import first_rle
