@@ -1,5 +1,5 @@
 import unittest
-#from code_func import *
+# from code_func import *
 from code_func import summ_digits
 from code_func import delete_word
 from code_func import first_rle
@@ -14,6 +14,7 @@ from code_func import secfibonacci
 
 class TestFunc(unittest.TestCase):
     """класс тестов номер 1"""
+
     def test_summ(self):
         self.assertEqual(summ_digits(123), 6)
 
@@ -32,6 +33,7 @@ class TestFunc(unittest.TestCase):
 
 class TestFunc2(unittest.TestCase):
     """класс тестов номер 2"""
+
     def test_lst(self):
         self.assertEqual(lst_keyboard(2), [-2, -1, 0, 1, 2])
 
@@ -42,7 +44,7 @@ class TestFunc2(unittest.TestCase):
         self.assertTrue(even_fn(6), True)
 
     def test_odd_dig(self):
-        self.assertFalse(odd(6),True)
+        self.assertFalse(odd(6), True)
 
     def test_fibo_2(self):
-        self.assertEqual(fibonacci(5),secfibonacci(5))
+        self.assertEqual(fibonacci(5), secfibonacci(5))
