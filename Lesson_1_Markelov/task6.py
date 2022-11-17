@@ -1,9 +1,12 @@
 from chardet import detect
 
-with open('test_file.txt', 'r', ) as f:  # TextIOWrapper 'test_file.txt' encoding='cp1251'>
-    file_bytes = f
-    for line in f:
-        print(line)
+with open('test_file.txt', 'rb') as f:
+    s = f.read()
+    print(s)
+    print(detect(s))
+
+with open('test_file.txt', encoding='utf-8') as file:
+    print(file.read())
 """
 Задание 6.
 

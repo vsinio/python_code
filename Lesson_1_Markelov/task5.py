@@ -4,6 +4,7 @@ import chardet
 ARG_1 = ['ping', 'yandex.ru']
 ARG_2 = ['ping', 'youtube.com']
 
+
 def PING_CALL(lst):
     ARG_PING = subprocess.Popen(lst, stdout=subprocess.PIPE)
     for i in ARG_PING.stdout:
@@ -12,9 +13,9 @@ def PING_CALL(lst):
         print(line)
     print(result)
 
+
 PING_CALL(ARG_1)
 PING_CALL(ARG_2)
-
 
 """
 Задание 5.
